@@ -23,9 +23,9 @@ def main():
                 print("Akun tidak ditemukan, silahkan registrasi!")
                 enter_continue()
             else:
-                admin = check_role(user["role"])
+                is_admin = check_role(user["role"])
 
-                if admin:
+                if is_admin:
                     main_admin()
                 else:
                     main_user()
