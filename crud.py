@@ -38,3 +38,8 @@ def show_data():
         table.add_row(row_to_display)
 
     print(table)
+
+
+def update_status(index):
+    data_users[index]["verif"] = True
+    save_data(data_users)
