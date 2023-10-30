@@ -50,8 +50,6 @@ def login():
     ]
 
     if len(user_exist) == 0:
-        print("Akun tidak ditemukan, silahkan registrasi!")
-        enter_continue()
-        return
+        return False
 
     return user_exist[0]
