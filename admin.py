@@ -61,7 +61,37 @@ def main_admin():
         elif pilihan == "3":
             print("Tampilkan Riwayat User")
         elif pilihan == "4":
-            print("Hapus User")
+            clear_screen()
+            print("Daftar User")
+            show_data()
+
+            if get_len_data() == 0:
+                print("Belum ada data!")
+                enter_continue()
+            else:
+                while True:
+                    try:
+                        clear_screen()
+                        print("Daftar User")
+                        show_data()
+                        index = int(input("Masukkan index user yang ingin dihapus: "))
+                        if index > 0 and index <= get_len_data():
+                            delete_user(index)
+                            break
+                        else:
+                            raise Exception("Data tidak ditemukan!")
+                    except ValueError:
+                        print("Input tidak valid!")
+                        enter_continue()
+                    except Exception as e:
+                        print(e)
+                        enter_continue()
+
+                clear_screen()
+                print("Daftar User")
+                show_data()
+                print("Data user berhasil dihapus!")
+                enter_continue()
         elif pilihan == "5":
             return
         else:

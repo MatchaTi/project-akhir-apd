@@ -43,3 +43,8 @@ def show_data():
 def update_status(index):
     data_users[index]["verif"] = True
     save_data(data_users)
+
+
+def delete_user(index):
+    del data_users[index]
+    save_data(data_users)
