@@ -1,8 +1,5 @@
-import os
-
-
-def clear_screen():
-    os.system("cls" if os.name == "nt" else "clear")
+from services import clear_screen
+from auth import register, login
 
 
 def main():
@@ -14,11 +11,11 @@ def main():
         print("[2] Login")
         print("[3] Keluar")
 
-        pilihan = input("Pilih menu\t:")
+        pilihan = input("Pilih menu\t: ")
         if pilihan == "1":
-            print("Register")
+            register()
         elif pilihan == "2":
-            print("Login")
+            login()
         elif pilihan == "3":
             return
 

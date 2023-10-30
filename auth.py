@@ -1,4 +1,4 @@
-from service import clear_screen, enter_continue
+from services import enter_continue
 from crud import data_users, create_data
 
 
@@ -40,3 +40,18 @@ def register():
 
 def login():
     print("Login")
+    username = input("Masukkan nama anda\t: ")
+    password = input("Masukkan password anda\t: ")
+
+    user_exist = [
+        data
+        for data in data_users
+        if data["nama"] == username and data["password"] == password
+    ]
+
+    if len(user_exist) == 0:
+        print("Akun tidak ditemukan, silahkan registrasi!")
+        enter_continue()
+        return
+
+    return user_exist[0]
