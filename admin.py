@@ -6,8 +6,8 @@ def menu_admin():
     print("Menu Admin:")
     print("[1] Tampilkan Daftar User")
     print("[2] Verifikasi Data User")
-    print("[3] Hapus User")
-    print("[4] Tampilkan Riwayat User")
+    print("[3] Tampilkan Riwayat User")
+    print("[4] Hapus User")
     print("[5] Logout")
 
 
