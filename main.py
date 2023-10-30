@@ -28,7 +28,7 @@ def main():
                 if is_admin:
                     main_admin()
                 else:
-                    main_user()
+                    main_user(user["nama"])
 
         elif pilihan == "3":
             return
