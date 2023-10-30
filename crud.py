@@ -6,7 +6,8 @@ file_path = "users.json"
 
 if not os.path.isfile(file_path):
     with open(file_path, "w") as json_file:
-        json.dump([], json_file, indent=4)
+        admin = {"nama": "admin", "password": "admin", "role": "admin"}
+        json.dump([admin], json_file, indent=4)
 
 
 def load_data():
