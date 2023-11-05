@@ -28,7 +28,11 @@ def main():
                 if is_admin:
                     main_admin()
                 else:
-                    main_user(user["nama"])
+                    if user["verif"]:
+                        main_user(user)
+                    else:
+                        print("Akun anda belum terverifikasi, silahkan tunggu...")
+                        enter_continue()
 
         elif pilihan == "3":
             return

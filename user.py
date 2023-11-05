@@ -15,7 +15,7 @@ def menu_user(name):
 def main_user(name):
     while True:
         clear_screen()
-        menu_user(name)
+        menu_user(name["nama"])
 
         pilihan = input("Pilih layanan: ")
 
