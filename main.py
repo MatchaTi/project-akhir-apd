@@ -1,4 +1,4 @@
-from services import clear_screen, enter_continue, check_role
+from services import clear_screen, enter_continue, check_role, install_dependencies
 from auth import register, login
 from admin import main_admin
 from user import main_user
@@ -42,6 +42,7 @@ def main():
 
 
 if __name__ == "__main__":
+    install_dependencies()
     main()
     clear_screen()
     print("Program Selesai!")

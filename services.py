@@ -2,6 +2,10 @@ import os
 from crud import data_users
 
 
+def install_dependencies():
+    os.system("pip install prettytable")
+
+
 def clear_screen():
     os.system("cls" if os.name == "nt" else "clear")
 
