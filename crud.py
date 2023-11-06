@@ -49,3 +49,12 @@ def update_status(index):
 def delete_user(index):
     del data_users[index]
     save_data(data_users)
+
+
+def user_screening(username, password, data):
+    new_data = data
+    for data in data_users[1:]:
+        if data["nama"] == username and data["password"] == password:
+            data["riwayat"].append(new_data)
+            save_data(data_users)
+            break
