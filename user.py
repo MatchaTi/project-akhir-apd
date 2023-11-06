@@ -1,5 +1,7 @@
 from services import clear_screen, enter_continue
-from program import bmi, kalori, hidrasi, kebahagiaan
+from program import kalori, hidrasi, kebahagiaan
+from crud import user_screening
+from bmi import bmi
 
 
 def menu_user(name):
@@ -12,15 +14,16 @@ def menu_user(name):
     print("[5] Logout")
 
 
-def main_user(name):
+def main_user(user):
     while True:
         clear_screen()
-        menu_user(name["nama"])
+        menu_user(user["nama"])
 
         pilihan = input("Pilih layanan: ")
 
         if pilihan == "1":
-            bmi()
+            result = bmi()
+            user_screening(user["nama"], user["password"], result)
             enter_continue()
         elif pilihan == "2":
             kalori()
