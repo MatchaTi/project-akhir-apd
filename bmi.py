@@ -14,7 +14,7 @@ def bmi():
         except Exception as e:
             print(e)
 
-    result = {"status": "", "note": "", "skor": 0}
+    result = {"program": "bmi", "status": "", "note": "", "skor": 0}
     BMI = round(BMI, 2)
 
     if BMI >= 27:
