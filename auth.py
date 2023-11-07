@@ -28,10 +28,11 @@ def register():
         "riwayat": [],
     }
 
-    if new_user in data_users:
-        print("Akun sudah terdaftar, silahkan login atau register!")
-        enter_continue()
-        return
+    for data in data_users:
+        if data["nama"] == username and data["password"] == password:
+            print("Akun sudah terdaftar, silahkan login atau register!")
+            enter_continue()
+            return
 
     create_data(new_user)
     print("Akun berhasil didaftarkan, Mohon tunggu data diverifikasi!")
@@ -43,13 +44,8 @@ def login():
     username = input("Masukkan nama anda\t: ")
     password = input("Masukkan password anda\t: ")
 
-    user_exist = [
-        data
-        for data in data_users
-        if data["nama"] == username and data["password"] == password
-    ]
+    for data in data_users:
+        if data["nama"] == username and data["password"] == password:
+            return data
 
-    if len(user_exist) == 0:
-        return False
-
-    return user_exist[0]
+    return False
