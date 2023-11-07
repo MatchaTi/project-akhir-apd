@@ -1,5 +1,6 @@
 from services import clear_screen, enter_continue
-from program import kalori, hidrasi, kebahagiaan
+from program import kalori, kebahagiaan
+from hidrasi import hidrasi
 from crud import user_screening
 from bmi import bmi
 
@@ -29,7 +30,8 @@ def main_user(user):
             kalori()
             enter_continue()
         elif pilihan == "3":
-            hidrasi()
+            result = hidrasi()
+            user_screening(user["nama"], user["password"], result)
             enter_continue()
         elif pilihan == "4":
             kebahagiaan()
