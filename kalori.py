@@ -30,8 +30,9 @@ def kalori(gender):
     # hasil
     result = {
         "program": "kalori",
-        "bmr": BMR,
-        "note": "Jumlah kalori yang dibutuhkan per hari adalah: ",
+        "berat badan": BB,
+        "tinggi badan": TB,
+        "bmr": round(BMR, 2),
     }
     # mengembalikan hasil
     return result
