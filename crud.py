@@ -1,10 +1,10 @@
 import os
-import json
-from prettytable import PrettyTable
+import json #mengambil Data JSON
+from prettytable import PrettyTable #mengambil prettytable dari file prettytable
 
-file_path = "users.json"
+file_path = "users.json" #variabel untuk tujuan file yang berisi nama file data users
 
-if not os.path.isfile(file_path):
+if not os.path.isfile(file_path):#
     with open(file_path, "w") as json_file:
         admin = {"nama": "admin", "password": "admin", "role": "admin"}
         json.dump([admin], json_file, indent=4)

@@ -1,8 +1,8 @@
-from services import clear_screen, enter_continue, get_len_data
-from crud import show_data, update_status, delete_user
+from services import clear_screen, enter_continue, get_len_data #mengambil fungsi dari file service
+from crud import show_data, update_status, delete_user #mengambil fungsi dari file crud
 
 
-def menu_admin():
+def menu_admin():#fungsi menampilkan menu
     print("Menu Admin:")
     print("[1] Tampilkan Daftar User")
     print("[2] Verifikasi Data User")
@@ -11,11 +11,11 @@ def menu_admin():
     print("[5] Logout")
 
 
-def main_admin():
+def main_admin():#fungsi pilih menu
     while True:
-        clear_screen()
-        menu_admin()
-        pilihan = input("Pilih menu\t: ")
+        clear_screen() #memanggil fitur membersihkan terminal dengan input clear/cls
+        menu_admin() # memanggil menu
+        pilihan = input("Pilih menu\t: ")#input user untuk memilih menu
 
         if pilihan == "1":
             clear_screen()
