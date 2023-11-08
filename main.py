@@ -40,13 +40,13 @@ def main():
                 enter_continue()
                 # jika akun user ditemukan
             else:
-                # mengecek apakah akun user adalah akun admin
+                # mengecek apakah role user adalah admin atau user
                 is_admin = check_role(user["role"])
-                # jika akun user adalah akun admin
+                # jika role user adalah admin
                 if is_admin:
                     # memanggil fungsi main/utama untuk admin
                     main_admin()
-                # jika akun user adalah akun biasa
+                # jika role user adalah user
                 else:
                     # Jika user sudah di verifikasi maka
                     if user["verif"]:
@@ -69,8 +69,15 @@ def main():
             enter_continue()
 
 
+# sebuah kondisi yang memeriksa apakah skrip Python ini sedang dijalankan sebagai program utama (main program)
+# atau diimpor sebagai modul oleh program lain. Jika skrip ini adalah program utama yang dijalankan, maka blok kode di
+# bawahnya akan dieksekusi.
 if __name__ == "__main__":
+    # memanggil fungsi yang digunakan untuk menginstall library yang dibutuhkan
     install_dependencies()
+    # memanggil fungsi utama
     main()
+    # memanggil fungsi untuk membersihkan terminal
     clear_screen()
+    # output setelah program selesai dijalankan
     print("Program Selesai!")
