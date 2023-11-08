@@ -39,10 +39,29 @@ def main_admin():#fungsi pilih menu
                         print("Daftar User")
                         show_data()
                         index = int(
-                            input("Masukkan index user yang ingin diverifikasi: ")
+                            input(
+                                "Masukkan index user yang ingin diverifikasi (0 untuk keluar): "
+                            )
                         )
-                        if index > 0 and index <= get_len_data():
-                            update_status(index)
+                        if index >= 1 and index <= get_len_data():
+                            yakin = input(
+                                "Yakin ingin memverifikasi data? (y/n): "
+                            ).lower()
+                            if yakin == "y":
+                                update_status(index)
+                                clear_screen()
+                                print("Daftar User")
+                                show_data()
+                                print("Data user berhasil diverifikasi!")
+                                enter_continue()
+                                break
+                            else:
+                                print("Gagal verifikasi data!")
+                                enter_continue()
+                                break
+                        elif index == 0:
+                            print("Tidak ada data yang diverifikasi!")
+                            enter_continue()
                             break
                         else:
                             raise Exception("Data tidak ditemukan!")
@@ -52,12 +71,6 @@ def main_admin():#fungsi pilih menu
                     except Exception as e:
                         print(e)
                         enter_continue()
-
-                clear_screen()
-                print("Daftar User")
-                show_data()
-                print("Data user berhasil diverifikasi!")
-                enter_continue()
         elif pilihan == "3":
             print("Tampilkan Riwayat User")
         elif pilihan == "4":
@@ -74,9 +87,28 @@ def main_admin():#fungsi pilih menu
                         clear_screen()
                         print("Daftar User")
                         show_data()
-                        index = int(input("Masukkan index user yang ingin dihapus: "))
-                        if index > 0 and index <= get_len_data():
-                            delete_user(index)
+                        index = int(
+                            input(
+                                "Masukkan index user yang ingin dihapus (0 untuk keluar): "
+                            )
+                        )
+                        if index >= 1 and index <= get_len_data():
+                            yakin = input("Yakin ingin menghapus data? (y/n): ").lower()
+                            if yakin == "y":
+                                delete_user(index)
+                                clear_screen()
+                                print("Daftar User")
+                                show_data()
+                                print("Data user berhasil dihapus!")
+                                enter_continue()
+                                break
+                            else:
+                                print("Gagal menghapus data!")
+                                enter_continue()
+                                break
+                        elif index == 0:
+                            print("Tidak ada data yang terhapus!")
+                            enter_continue()
                             break
                         else:
                             raise Exception("Data tidak ditemukan!")
@@ -86,12 +118,6 @@ def main_admin():#fungsi pilih menu
                     except Exception as e:
                         print(e)
                         enter_continue()
-
-                clear_screen()
-                print("Daftar User")
-                show_data()
-                print("Data user berhasil dihapus!")
-                enter_continue()
         elif pilihan == "5":
             return
         else:
