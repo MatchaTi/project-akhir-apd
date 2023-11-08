@@ -4,7 +4,6 @@ import os
 import json
 
 # mengambil prettytable dari file prettytable
-
 from prettytable import PrettyTable
 
 # variabel untuk tujuan file yang berisi nama file data users
@@ -64,3 +63,17 @@ def user_screening(username, password, data):
             data["riwayat"].append(new_data)
             save_data(data_users)
             break
+
+
+def table_riwayat(data_riwayat, fields):
+    table_fields = fields
+    # inisialisasi tabel menggunakan prettytable
+    table = PrettyTable()
+    table.padding_width = 5
+    table.field_names = ["NO"] + table_fields
+
+    for i, row in enumerate(data_riwayat, start=1):
+        row_to_display = [i] + [row[col] for col in table_fields]
+        table.add_row(row_to_display)
+
+    print(table)
