@@ -6,6 +6,7 @@ import json
 # mengambil prettytable dari file prettytable
 from prettytable import PrettyTable
 
+
 # variabel untuk tujuan file yang berisi nama file data users
 file_path = "users.json"
 
@@ -77,3 +78,45 @@ def table_riwayat(data_riwayat, fields):
         table.add_row(row_to_display)
 
     print(table)
+
+
+def show_user_riwayat(index):
+    print("Pilih Layanan:")
+    print("[1] Kalkulator BMI")
+    print("[2] Kalkulator Kalori")
+    print("[3] Kalkulator Hidrasi")
+    print("[4] Kalkulator Kebahagiaan")
+
+    table_fields = []
+    program = ""
+    while True:
+        pilihan = input("Pilih index program: ")
+        if pilihan == "1":
+            table_fields = ["skor", "status", "note"]
+            program = "bmi"
+            break
+        elif pilihan == "2":
+            table_fields = ["tinggi badan", "berat badan", "bmr"]
+            program = "kalori"
+            break
+        elif pilihan == "3":
+            table_fields = ["note"]
+            program = "hidrasi"
+            break
+        elif pilihan == "4":
+            table_fields = ["skor", "parameter"]
+            program = "kebahagiaan"
+            break
+        else:
+            print("Pilihan tidak tersedia")
+
+    riwayat = [
+        data for data in data_users[index]["riwayat"] if data["program"] == program
+    ]
+
+    os.system("cls" if os.name == "nt" else "clear")
+    print(f"List Riwayat: {program}")
+    table_riwayat(riwayat, table_fields)
+
+    if len(riwayat) == 0:
+        print("\nBelum ada data!")

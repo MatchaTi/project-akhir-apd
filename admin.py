@@ -2,7 +2,7 @@
 from services import clear_screen, enter_continue, get_len_data
 
 # mengambil fungsi dari file crud
-from crud import show_data, update_status, delete_user
+from crud import show_data, update_status, delete_user, show_user_riwayat
 
 
 # fungsi menampilkan menu
@@ -80,7 +80,35 @@ def main_admin():
                         print(e)
                         enter_continue()
         elif pilihan == "3":
-            print("Tampilkan Riwayat User")
+            clear_screen()
+            print("Daftar User")
+            show_data()
+
+            if get_len_data() == 0:
+                print("Belum ada data!")
+                enter_continue()
+            else:
+                while True:
+                    try:
+                        clear_screen()
+                        print("Daftar User")
+                        show_data()
+                        index = int(input("Masukkan index user (0 untuk keluar): "))
+                        if index >= 1 and index <= get_len_data():
+                            show_user_riwayat(index)
+                            enter_continue()
+                            clear_screen()
+                            break
+                        elif index == 0:
+                            break
+                        else:
+                            raise Exception("Data tidak ditemukan!")
+                    except ValueError:
+                        print("Input tidak valid!")
+                        enter_continue()
+                    except Exception as e:
+                        print(e)
+                        enter_continue()
         elif pilihan == "4":
             clear_screen()
             print("Daftar User")
