@@ -139,44 +139,70 @@ def table_riwayat(data_riwayat, fields):
     # Mencetak tabel yang telah dibuat.
     print(table)
 
-
+# fungsi untuk menampilkan riwayat user
 def show_user_riwayat(index):
+    # menampilkan menu fitur
     print("Pilih Layanan:")
     print("[1] Kalkulator BMI")
     print("[2] Kalkulator Kalori")
     print("[3] Kalkulator Hidrasi")
     print("[4] Kalkulator Kebahagiaan")
 
+    # inisialisasi variabel table_fields
     table_fields = []
+    # inisialisasi variabel program
     program = ""
     while True:
+        # input pilihan menu fitur yang ingin dilihat riwayatnya
         pilihan = input("Pilih index program: ")
+        # jika admin memilih 1 maka,
         if pilihan == "1":
+            # header tabel riwayat
             table_fields = ["skor", "status", "note"]
+            # nama program yang akan ditampilkan riwayatnya
             program = "bmi"
+           # keluar dari looping
             break
+        # jika admin memilih 2 maka,
         elif pilihan == "2":
+            # header tabel riwayat
             table_fields = ["tinggi badan", "berat badan", "bmr"]
+            # nama program yang akan ditampilkan riwayatnya
             program = "kalori"
+            # keluar dari looping
             break
+        # jika admin memilih 3 maka,
         elif pilihan == "3":
+            # header tabel riwayat
             table_fields = ["note"]
+            # nama program yang akan ditampilkan riwayatnya
             program = "hidrasi"
+            # keluar dari looping
             break
+        # jika admin memilih 4 maka,
         elif pilihan == "4":
+            # header tabel riwayat
             table_fields = ["skor", "parameter"]
+            # nama program yang akan ditampilkan riwayatnya
             program = "kebahagiaan"
+            # keluar dari looping
             break
+        # jika admin memilih pilihan yang bukan berupa angka 1-4 maka,
         else:
+            # menampilkan bahwa pilihan tidak tersedia
             print("Pilihan tidak tersedia")
-
+    # untuk mengakses/memfilterg riwayat program yang dipilih lalu memasukkannya ke variabel riwayat
     riwayat = [
         data for data in data_users[index]["riwayat"] if data["program"] == program
     ]
 
+    # membersihkan terminal
     os.system("cls" if os.name == "nt" else "clear")
+    # menampilkan tabel riwayat program yang dipilih
     print(f"List Riwayat: {program}")
     table_riwayat(riwayat, table_fields)
-
+    
+    # jika jumlah riwayat adalah o maka,
     if len(riwayat) == 0:
+        # tampilkan info bahwa Belum ada data
         print("\nBelum ada data!")
