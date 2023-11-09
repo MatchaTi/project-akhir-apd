@@ -40,6 +40,8 @@ def main_user(user):
             # header untuk tabel riwayat
             table_fields = ["skor", "status", "note"]
             # menampilkan riwayat ke terminal sebagai tabel
+            clear_screen()
+            print("[-] Hasil Screening")
             table_riwayat([result], table_fields)
             enter_continue()
         # jika user memilih pilihan 2 maka,
@@ -51,6 +53,8 @@ def main_user(user):
             # header untuk tabel riwayat
             table_fields = ["tinggi badan", "berat badan", "bmr"]
             # menampilkan riwayat ke terminal sebagai tabel
+            clear_screen()
+            print("[-] Hasil Screening")
             table_riwayat([result], table_fields)
             enter_continue()
         # Jika user memilih pilihan 3 maka,
@@ -62,6 +66,8 @@ def main_user(user):
             # header untuk tabel riwayat
             table_fields = ["note"]
             # menampilkan riwayat ke terminal sebagai tabel
+            clear_screen()
+            print("[-] Hasil Screening")
             table_riwayat([result], table_fields)
             enter_continue()
         # Jika user memilih pilihan 4 maka,
@@ -73,6 +79,8 @@ def main_user(user):
             # header untuk tabel riwayat
             table_fields = ["skor", "parameter"]
             # menampilkan riwayat ke terminal sebagai tabel
+            clear_screen()
+            print("[-] Hasil Screening")
             table_riwayat([result], table_fields)
             # menampilkan note 
             print(result["note"])
