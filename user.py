@@ -27,24 +27,32 @@ def main_user(user):
             result = bmi()
             user_screening(user["nama"], user["password"], result)
             table_fields = ["skor", "status", "note"]
+            clear_screen()
+            print("[-] Hasil Screening")
             table_riwayat([result], table_fields)
             enter_continue()
         elif pilihan == "2":
             result = kalori(user["gender"])
             user_screening(user["nama"], user["password"], result)
             table_fields = ["tinggi badan", "berat badan", "bmr"]
+            clear_screen()
+            print("[-] Hasil Screening")
             table_riwayat([result], table_fields)
             enter_continue()
         elif pilihan == "3":
             result = hidrasi()
             user_screening(user["nama"], user["password"], result)
             table_fields = ["note"]
+            clear_screen()
+            print("[-] Hasil Screening")
             table_riwayat([result], table_fields)
             enter_continue()
         elif pilihan == "4":
             result = kebahagiaan()
             user_screening(user["nama"], user["password"], result)
             table_fields = ["skor", "parameter"]
+            clear_screen()
+            print("[-] Hasil Screening")
             table_riwayat([result], table_fields)
             print(result["note"])
             enter_continue()
