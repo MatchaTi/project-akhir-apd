@@ -1,19 +1,25 @@
 # mengambil fungsi dari file service
 from services import clear_screen, enter_continue
+
 # mengambil fungsi dari file hidrasi
 from hidrasi import hidrasi
+
 # mengambil fungsi dari file crud
 from crud import user_screening, table_riwayat
+
 # mengambil fungsi dari file kebahagiaan
 from kebahagiaan import kebahagiaan
+
 # mengambil fungsi dari file kalori
 from kalori import kalori
+
 # mengambil fungsi dari file bmi
 from bmi import bmi
 
+
 # fungsi untuk menampilkan menu user
-def menu_user(name): 
-    print(f"Profile = {name}")
+def menu_user(name):
+    print(f"Profile = {name}\n")
     print("Pilih Layanan:")
     print("[1] Kalkulator BMI")
     print("[2] Kalkulator Kalori")
@@ -21,15 +27,16 @@ def menu_user(name):
     print("[4] Kalkulator Kebahagiaan")
     print("[5] Logout")
 
+
 # fungsi untuk menjalankan menu user
 def main_user(user):
     while True:
         clear_screen()
-        # 
+        #
         menu_user(user["nama"])
 
         # input pilihan menu user
-        pilihan = input("Pilih layanan: ")
+        pilihan = input("\nPilih layanan: ")
 
         # Jika user memilih pilihan 1 maka,
         if pilihan == "1":
@@ -82,7 +89,7 @@ def main_user(user):
             clear_screen()
             print("[-] Hasil Screening")
             table_riwayat([result], table_fields)
-            # menampilkan note 
+            # menampilkan note
             print(result["note"])
             enter_continue()
         # Jika user memilih pilihan 5 maka,

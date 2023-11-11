@@ -139,10 +139,11 @@ def table_riwayat(data_riwayat, fields):
     # Mencetak tabel yang telah dibuat.
     print(table)
 
+
 # fungsi untuk menampilkan riwayat user
 def show_user_riwayat(index):
     # menampilkan menu fitur
-    print("Pilih Layanan:")
+    print("\nPilih Layanan:")
     print("[1] Kalkulator BMI")
     print("[2] Kalkulator Kalori")
     print("[3] Kalkulator Hidrasi")
@@ -154,14 +155,14 @@ def show_user_riwayat(index):
     program = ""
     while True:
         # input pilihan menu fitur yang ingin dilihat riwayatnya
-        pilihan = input("Pilih index program: ")
+        pilihan = input("\nPilih index program: ")
         # jika admin memilih 1 maka,
         if pilihan == "1":
             # header tabel riwayat
             table_fields = ["skor", "status", "note"]
             # nama program yang akan ditampilkan riwayatnya
             program = "bmi"
-           # keluar dari looping
+            # keluar dari looping
             break
         # jika admin memilih 2 maka,
         elif pilihan == "2":
@@ -201,7 +202,7 @@ def show_user_riwayat(index):
     # menampilkan tabel riwayat program yang dipilih
     print(f"List Riwayat: {program}")
     table_riwayat(riwayat, table_fields)
-    
+
     # jika jumlah riwayat adalah o maka,
     if len(riwayat) == 0:
         # tampilkan info bahwa Belum ada data

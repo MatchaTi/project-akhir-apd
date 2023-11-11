@@ -17,13 +17,13 @@ def main():
         # memanggil fungsi untuk membersihkan terminal
         clear_screen()
         # Print menu utama
-        print("Selamat Datang di Aplikasi Screening Kesehatan")
+        print("Selamat Datang di Aplikasi Screening Kesehatan\n")
         print("Menu:")
         print("[1] Register")
         print("[2] Login")
         print("[3] Keluar")
         # input pilihan menu
-        pilihan = input("Pilih menu\t: ")
+        pilihan = input("\nPilih menu\t: ")
         # jika user memilih/input 1 maka....
         if pilihan == "1":
             # fungsi register dipanggil

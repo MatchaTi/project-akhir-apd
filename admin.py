@@ -23,7 +23,7 @@ def main_admin():
         # memanggil menu
         menu_admin()
         # input user untuk memilih menu
-        pilihan = input("Pilih menu\t: ")
+        pilihan = input("\nPilih menu\t: ")
 
         # kondisi jika admin ingin menampilkan data list user
         # jika admin memilih menu "1" maka,
